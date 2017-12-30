@@ -1,0 +1,42 @@
+@import "normalize-3.0.2.less";
+* {
+	box-sizing: border-box
+}
+
+body {
+	margin: 5px;
+}
+
+table {
+	width: 100%;
+	border: 1px solid black;
+	tbody {
+		tr:nth-child(odd) {
+			background-color: #DDD;
+		}
+
+		td.numbers , td.complete {
+			text-align: center;
+		}
+	}
+}
+
+form {
+	fieldset {
+		border: 1px solid black;
+	}
+
+	div {
+		display: flex;
+	}
+
+	label {
+		display: inline-block;
+		width: 15%;
+	}
+
+	input[type=text] {
+		width: 85%;
+	}
+}
+
