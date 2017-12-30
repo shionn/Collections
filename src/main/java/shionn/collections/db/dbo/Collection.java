@@ -9,6 +9,10 @@ import java.util.stream.Collectors;
 public enum Collection {
 	mangas("Mangas", Arrays.asList(Field.name, Field.author, Field.numbers, Field.complete),
 			item -> item.setQty(numberToQty(item.getNumbers()))), //
+	bds("Bandes-dessinées", Arrays.asList(Field.name, Field.author, Field.numbers, Field.complete),
+			item -> item.setQty(numberToQty(item.getNumbers()))),
+	videogames("Jeux vidéo",
+			Arrays.asList(Field.name, Field.plateform, Field.region), item -> item.setQty(1)),
 	vine("Vins", Arrays.asList(Field.name, Field.year, Field.category, Field.qty), null);
 
 	private String title;
@@ -40,6 +44,8 @@ public enum Collection {
 				items -> items.stream().collect(Collectors.summingInt(i -> i.getQty()))), //
 		year("Année", Type.string, null), //
 		category("Categorie", Type.string, null), //
+		plateform("Plateforme", Type.string, null), //
+		region("Region", Type.string, null), //
 		qty("Quantitée", Type.integer, null), //
 		complete("Complet", Type.bool, null);
 		private String title;

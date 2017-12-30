@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -26,14 +27,14 @@
 							<input type="checkbox" name="${field}"<c:if test="${item[field]}"> checked="checked"</c:if>>
 						</c:when>
 						<c:when test="${field.type == 'integer'}">
-							<input type="number" name="${field}" required="required">
+							<input type="number" name="${field}" required="required" value="${item[field]}">
 						</c:when>
 						<c:otherwise>TODO</c:otherwise>
 					</c:choose>
 				</div>
 			</c:forEach>
 			<div>
-				<input type="submit" value="Ajouter">
+				<input type="submit" value="Editer">
 			</div>
 		</fieldset>
 	</form:form>
