@@ -47,6 +47,9 @@
 						<c:when test="${field.type == 'bool'}">
 							<input type="checkbox" name="${field}">
 						</c:when>
+						<c:when test="${field.type == 'integer'}">
+							<input type="number" name="${field}" required="required">
+						</c:when>
 						<c:otherwise>TODO</c:otherwise>
 					</c:choose>
 				</div>

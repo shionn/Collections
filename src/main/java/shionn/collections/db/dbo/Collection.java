@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public enum Collection {
 	mangas("Mangas", Arrays.asList(Field.name, Field.author, Field.numbers, Field.complete),
 			item -> item.setQty(numberToQty(item.getNumbers()))), //
-	vine("Vins", Arrays.asList(Field.name), null);
+	vine("Vins", Arrays.asList(Field.name, Field.year, Field.category, Field.qty), null);
 
 	private String title;
 	private List<Field> fields;
@@ -38,6 +38,9 @@ public enum Collection {
 		author("Auteur", Type.string, null), //
 		numbers("Numeros", Type.string,
 				items -> items.stream().collect(Collectors.summingInt(i -> i.getQty()))), //
+		year("Année", Type.string, null), //
+		category("Categorie", Type.string, null), //
+		qty("Quantitée", Type.integer, null), //
 		complete("Complet", Type.bool, null);
 		private String title;
 		private Type type;
@@ -66,7 +69,7 @@ public enum Collection {
 		}
 
 		public enum Type {
-			string, bool
+			string, bool, integer
 		}
 
 	}

@@ -8,6 +8,7 @@ public class Item {
 	private String numbers;
 	private String plateform;
 	private String region;
+	private String category;
 	private boolean complete;
 	private Collection collection;
 	private String year;
@@ -76,4 +77,29 @@ public class Item {
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
+
+	public String getPlateform() {
+		return plateform;
+	}
+
+	public void setPlateform(String plateform) {
+		this.plateform = plateform;
+	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 }
