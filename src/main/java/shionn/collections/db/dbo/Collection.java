@@ -12,7 +12,11 @@ public enum Collection {
 	bds("Bandes-dessinées", Arrays.asList(Field.name, Field.author, Field.numbers, Field.complete),
 			item -> item.setQty(numberToQty(item.getNumbers()))),
 	videogames("Jeux vidéo",
-			Arrays.asList(Field.name, Field.plateform, Field.region), item -> item.setQty(1)),
+			Arrays.asList(Field.name, Field.category, Field.plateform, Field.region),
+			item -> {
+				item.setQty(1);
+				item.setCategory(item.getCategory().trim());
+			}),
 	vine("Vins", Arrays.asList(Field.name, Field.year, Field.category, Field.qty), null);
 
 	private String title;
