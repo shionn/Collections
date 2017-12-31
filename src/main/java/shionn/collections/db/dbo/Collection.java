@@ -20,7 +20,7 @@ public enum Collection {
 			Arrays.asList(Field.name, Field.author, Field.editor, Field.category, Field.numbers,
 					Field.complete),
 			item -> item.setQty(numberToQty(item.getNumbers())), "book"), //
-	videogames("Jeux vidéo",
+	videogames("Jeux vidéos",
 			Arrays.asList(Field.name, Field.category, Field.plateform, Field.region), item -> {
 				item.setQty(1);
 				item.setCategory(item.getCategory().trim());
