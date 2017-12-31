@@ -44,6 +44,14 @@
 								<c:when test="${field.type == 'img'}">
 									<td class="${field}"><img src='<spring:url value="/static/img/${field}/${fn:toLowerCase(item[field])}.png"/>'/></td>
 								</c:when>
+								<c:when test="${field.type == 'bool'}">
+									<c:if test="${item[field]}">
+										<td class="${field}"><span class="fa fa-check"></span></td>
+									</c:if>
+									<c:if test="${not item[field]}">
+										<td class="${field}"><span class="fa fa-times"></span></td>
+									</c:if>
+								</c:when>
 								<c:otherwise>
 									<td class="${field}">${item[field]}</td>
 								</c:otherwise>

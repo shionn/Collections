@@ -40,7 +40,7 @@ table {
 
 	th {
 		@media (max-width: 500px) {
-			&.plateform , &.complete, &.qty {
+			&.plateform , &.complete , &.qty {
 				max-width: 32px;
 				white-space: nowrap;
 				overflow: hidden;
@@ -59,8 +59,17 @@ table {
 			text-align: center;
 		}
 
-		td.numbers, td.complete, td.plateform, td.year, td.qty {
+		td.numbers , td.complete , td.plateform , td.year , td.qty {
 			text-align: center;
+		}
+
+		td.complete {
+			.fa-check {
+				color: green;
+			}
+			.fa-times {
+				color: red;
+			}
 		}
 	}
 }
