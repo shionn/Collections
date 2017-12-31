@@ -12,10 +12,11 @@ public enum Collection {
 	bds("Bandes-dessinées",
 			Arrays.asList(Field.name, Field.author, Field.editor, Field.category, Field.numbers,
 					Field.complete),
-			item -> item.setQty(numberToQty(item.getNumbers())), "book"), books("Livres",
-					Arrays.asList(Field.name, Field.author, Field.editor, Field.category,
-							Field.year),
-					null, "book"), //
+			item -> item.setQty(numberToQty(item.getNumbers())), "book"), //
+	books("Livres",
+			Arrays.asList(Field.name, Field.author, Field.editor, Field.category, Field.year),
+			item -> item.setQty(1),
+			"book"), //
 	comics("Comics",
 			Arrays.asList(Field.name, Field.author, Field.editor, Field.category, Field.numbers,
 					Field.complete),
@@ -120,6 +121,5 @@ public enum Collection {
 		}
 		return count;
 	}
-
 
 }
