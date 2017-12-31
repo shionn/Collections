@@ -40,7 +40,7 @@ public class CollectionController {
 		item.setCollection(collection);
 		session.getMapper(CollectionDao.class).insert(item);
 		session.commit();
-		return "redirect:/" + collection.name();
+		return "redirect:/" + collection.name() + "#form";
 	}
 
 	@RequestMapping(path = "/{collection}/edit/{id}", method = RequestMethod.GET)

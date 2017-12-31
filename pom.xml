@@ -4,7 +4,7 @@
 
 	<groupId>shionn</groupId>
 	<artifactId>Collections</artifactId>
-	<version>1.2</version>
+	<version>1.4</version>
 	<name>Collections</name>
 	<packaging>war</packaging>
 

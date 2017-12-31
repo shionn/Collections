@@ -63,7 +63,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<form:form method="POST">
+	<form:form method="POST" id="form">
 		<fieldset>
 			<legend>Ajout ${collection.title}</legend>
 			<c:forEach items="${collection.fields}" var="field">

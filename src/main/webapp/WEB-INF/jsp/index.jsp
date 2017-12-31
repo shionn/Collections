@@ -13,7 +13,7 @@
 <body>
 	<ul>
 		<c:forEach items="${collections}" var="collection">
-			<li><a href='<spring:url value="${collection}"/>'>${collection.title}</a></li>
+			<li><span class="fa fa-${collection.fa}"></span> <a href='<spring:url value="${collection}"/>'>${collection.title}</a><span class="badge">${collection.qty}</span></li>
 		</c:forEach>
 	</ul>
 </body>

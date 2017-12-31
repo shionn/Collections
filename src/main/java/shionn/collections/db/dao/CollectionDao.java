@@ -40,4 +40,7 @@ public interface CollectionDao {
 			+ "WHERE id   = #{item.id}")
 	int save(@Param("item") Item item);
 
+	@Select("Select collection, sum(qty) as qty FROM item GROUP BY collection")
+	List<Item> listCollections();
+
 }

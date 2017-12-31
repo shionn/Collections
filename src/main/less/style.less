@@ -17,12 +17,27 @@ ul {
 	border: 1px solid black;
 	border-radius: 5px;
 	padding: 0;
+	width: 50%;
+	margin: 0 auto;
+	@media (max-width: 500px) {
+		width: 100%;
+	}
+
 	li {
+		display: flex;
+		justify-content: space-between;
 		list-style: none;
 		padding: 8px;
 		border-top: 1px solid black;
 		&:first-child {
 			border-top: none;
+		}
+
+		.badge {
+			background-color: #000;
+			color: #FFF;
+			padding: 2px 5px;
+			border-radius: 5px;
 		}
 	}
 }
@@ -67,6 +82,7 @@ table {
 			.fa-check {
 				color: green;
 			}
+
 			.fa-times {
 				color: red;
 			}
@@ -93,7 +109,14 @@ form {
 		}
 	}
 
-	input[type=text] , input[type=number] {
+	input[type=submit] {
+		margin-left: 15%;
+		@media (max-width: 500px) {
+			margin-left: 30%;
+		}
+	}
+
+	input[type=text] , input[type=number] , input[type=password] , input[type=email] , input[type=submit] {
 		width: 85%;
 		@media (max-width: 500px) {
 			width: 70%;
