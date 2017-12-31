@@ -29,7 +29,15 @@ ul {
 
 table {
 	width: 100%;
-	border: 1px solid black;
+	td , th {
+		padding: 2px;
+		@media (max-width: 500px) {
+			&.author, &.editor, &.region {
+				display: none;
+			}
+		}
+	}
+
 	tbody {
 		tr:nth-child(odd) {
 			background-color: #DDD;
@@ -37,7 +45,7 @@ table {
 
 		tr.category {
 			background-color: lightskyblue;
-			text-align : center;
+			text-align: center;
 		}
 
 		td.numbers , td.complete {
@@ -49,6 +57,8 @@ table {
 form {
 	fieldset {
 		border: 1px solid black;
+		margin: 0;
+		border-radius: 5px;
 	}
 
 	div {
