@@ -38,5 +38,32 @@
 			</div>
 		</fieldset>
 	</form:form>
+	<spring:url value="/${collection}/delete/${item.id}" var="action"/>
+	<form:form method="POST" action="${action}">
+		<input type="hidden" name="id" value="${item.id}">
+		<fieldset>
+			<legend>Suppression ${collection.title}, ${item.id}</legend>
+			<c:forEach items="${collection.fields}" var="field">
+				<div>
+					<label for="${field}">${field.title}</label>
+					<c:choose>
+						<c:when test="${field.type == 'string' || field.type == 'img'}">
+							<input type="text" name="${field}" readonly="readonly" value="${item[field]}">
+						</c:when>
+						<c:when test="${field.type == 'bool'}">
+							<input type="checkbox" name="${field}"<c:if test="${item[field]}"> checked="checked"</c:if> readonly="readonly">
+						</c:when>
+						<c:when test="${field.type == 'integer'}">
+							<input type="number" name="${field}" readonly="readonly" value="${item[field]}">
+						</c:when>
+						<c:otherwise>TODO</c:otherwise>
+					</c:choose>
+				</div>
+			</c:forEach>
+			<div>
+				<input type="submit" value="Supprimer" class="delete">
+			</div>
+		</fieldset>
+	</form:form>
 </body>
 </html>

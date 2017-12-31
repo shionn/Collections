@@ -109,10 +109,25 @@ form {
 		}
 	}
 
+	input {
+		border: 1px solid black;
+		margin: 1px;
+		padding: 1px 3px;
+		border-radius: 3px;
+		&[readonly=readonly] {
+			background-color: #DDD;
+			color: #333;
+		}
+	}
+
 	input[type=submit] {
 		margin-left: 15%;
 		@media (max-width: 500px) {
 			margin-left: 30%;
+		}
+
+		&.delete {
+			background-color: #F66;
 		}
 	}
 

@@ -59,6 +59,14 @@ public class CollectionController {
 		}
 		session.getMapper(CollectionDao.class).save(item);
 		session.commit();
+		return "redirect:/" + collection.name() + "#" + item.getId();
+	}
+
+	@RequestMapping(path = "/{collection}/delete/{id}", method = RequestMethod.POST)
+	public String delete(@PathVariable("collection") Collection collection,
+			@ModelAttribute Item item) {
+		session.getMapper(CollectionDao.class).delete(item.getId());
+		session.commit();
 		return "redirect:/" + collection.name();
 	}
 

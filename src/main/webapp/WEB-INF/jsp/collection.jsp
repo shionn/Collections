@@ -37,7 +37,7 @@
 						<c:set var="category" value="${item.category}"/>
 					</tr>
 				</c:if>
-				<tr>
+				<tr id="${item.id}">
 					<c:forEach items="${collection.fields}" var="field">
 						<c:if test="${field != 'category'}">
 							<c:choose>
