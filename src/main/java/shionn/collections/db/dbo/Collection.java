@@ -58,7 +58,7 @@ public enum Collection {
 		year("Année", Type.string, null), //
 		editor("Editeur", Type.string, null), //
 		category("Categorie", Type.string, null), //
-		plateform("Plateforme", Type.string, null), //
+		plateform("Plateforme", Type.img, null), //
 		region("Region", Type.string, null), //
 		qty("Quantité", Type.integer, null), //
 		complete("Complet", Type.bool, null);
@@ -89,7 +89,7 @@ public enum Collection {
 		}
 
 		public enum Type {
-			string, bool, integer
+			string, bool, integer, img
 		}
 
 	}

@@ -40,7 +40,14 @@
 				<tr>
 					<c:forEach items="${collection.fields}" var="field">
 						<c:if test="${field != 'category'}">
-							<td class="${field}">${item[field]}</td>
+							<c:choose>
+								<c:when test="${field.type == 'img'}">
+									<td class="${field}"><img src='<spring:url value="/static/img/${field}/${fn:toLowerCase(item[field])}.png"/>'/></td>
+								</c:when>
+								<c:otherwise>
+									<td class="${field}">${item[field]}</td>
+								</c:otherwise>
+							</c:choose>
 						</c:if>
 					</c:forEach>
 					<td class="buttons"><a href='<spring:url value="${collection}/edit/${item.id}"/>'><span class="fa fa-pencil"></span></a></td>
@@ -55,7 +62,7 @@
 				<div>
 					<label for="${field}">${field.title}</label>
 					<c:choose>
-						<c:when test="${field.type == 'string'}">
+						<c:when test="${field.type == 'string' || field.type == 'img'}">
 							<input type="text" name="${field}" required="required">
 						</c:when>
 						<c:when test="${field.type == 'bool'}">

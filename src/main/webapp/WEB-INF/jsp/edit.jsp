@@ -20,7 +20,7 @@
 				<div>
 					<label for="${field}">${field.title}</label>
 					<c:choose>
-						<c:when test="${field.type == 'string'}">
+						<c:when test="${field.type == 'string' || field.type == 'img'}">
 							<input type="text" name="${field}" required="required" value="${item[field]}">
 						</c:when>
 						<c:when test="${field.type == 'bool'}">
