@@ -10,11 +10,15 @@ public enum Collection {
 	mangas("Mangas", Arrays.asList(Field.name, Field.author, Field.numbers, Field.complete),
 			item -> item.setQty(numberToQty(item.getNumbers()))), //
 	bds("Bandes-dessinées",
-			Arrays.asList(Field.name, Field.author, Field.editor, Field.numbers, Field.complete),
+			Arrays.asList(Field.name, Field.author, Field.editor, Field.category, Field.numbers,
+					Field.complete),
 			item -> item.setQty(numberToQty(item.getNumbers()))),
-	books("Livres", Arrays.asList(Field.name, Field.author, Field.category, Field.year),
+	books("Livres",
+			Arrays.asList(Field.name, Field.author, Field.editor, Field.category, Field.year),
 			null),
-	comics("Comics", Arrays.asList(Field.name, Field.author, Field.numbers, Field.complete),
+	comics("Comics",
+			Arrays.asList(Field.name, Field.author, Field.editor, Field.category, Field.numbers,
+					Field.complete),
 			item -> item.setQty(numberToQty(item.getNumbers()))), //
 	videogames("Jeux vidéo",
 			Arrays.asList(Field.name, Field.category, Field.plateform, Field.region),

@@ -2,6 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,19 +18,30 @@
 		<thead>
 			<tr>
 				<c:forEach items="${collection.fields}" var="field">
-					<th class="${field}">
-						${field.title}
-						<c:if test="${field.decorator != null}">${field.getDecorator(items)}</c:if>
-					</th>
+					<c:if test="${field != 'category'}">
+						<th class="${field}">
+							${field.title}
+							<c:if test="${field.decorator != null}">${field.getDecorator(items)}</c:if>
+						</th>
+					</c:if>
 				</c:forEach>
 				<th class="buttons">#</th>
 			</tr>
 		</thead>
 		<tbody>
+			<c:set var="category" value="-"/>
 			<c:forEach items="${items}" var="item">
+				<c:if test="${item.category != category && fn:length(item.category)>1}">
+					<tr class="category">
+						<td colspan="${fn:length(collection.fields)}">${item.category}</td>
+						<c:set var="category" value="${item.category}"/>
+					</tr>
+				</c:if>
 				<tr>
 					<c:forEach items="${collection.fields}" var="field">
-						<td class="${field}">${item[field]}</td>
+						<c:if test="${field != 'category'}">
+							<td class="${field}">${item[field]}</td>
+						</c:if>
 					</c:forEach>
 					<td class="buttons"><a href='<spring:url value="${collection}/edit/${item.id}"/>'><span class="fa fa-pencil"></span></a></td>
 				</tr>

@@ -12,7 +12,7 @@ import shionn.collections.db.dbo.Item;
 
 public interface CollectionDao {
 
-	@Select("SELECT * FROM item WHERE collection = #{collection} ORDER BY name ")
+	@Select("SELECT * FROM item WHERE collection = #{collection} ORDER BY category, name ")
 	List<Item> list(@Param("collection") Collection collection);
 
 	@Insert("INSERT INTO item (name, author, numbers, complete, collection, year, qty, "
