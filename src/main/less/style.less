@@ -1,10 +1,31 @@
 @import "normalize-3.0.2.less";
+@import "fontawesome/font-awesome.less";
+
 * {
 	box-sizing: border-box
 }
 
+a {
+	color : #000;
+	text-decoration : none;
+}
+
 body {
 	margin: 5px;
+}
+
+ul {
+	border: 1px solid black;
+	border-radius : 5px;
+	padding : 0;
+	li {
+		list-style: none;
+		padding : 8px;
+		border-top : 1px solid black;
+		&:first-child {
+			border-top : none;
+		}
+	}
 }
 
 table {

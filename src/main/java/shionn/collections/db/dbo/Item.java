@@ -9,6 +9,7 @@ public class Item {
 	private String plateform;
 	private String region;
 	private String category;
+	private String editor;
 	private boolean complete;
 	private Collection collection;
 	private String year;
@@ -100,6 +101,14 @@ public class Item {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public String getEditor() {
+		return editor;
+	}
+
+	public void setEditor(String editor) {
+		this.editor = editor;
 	}
 
 }

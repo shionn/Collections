@@ -12,7 +12,8 @@
 <title>${collection.title}</title>
 </head>
 <body>
-	<table>
+	<div><a href='<spring:url value="/"/>'><span class="fa fa-home"></span> Home</a></div>
+	<table class="${collection}">
 		<thead>
 			<tr>
 				<c:forEach items="${collection.fields}" var="field">
@@ -30,7 +31,7 @@
 					<c:forEach items="${collection.fields}" var="field">
 						<td class="${field}">${item[field]}</td>
 					</c:forEach>
-					<td class="buttons"><a href='<spring:url value="${collection}/edit/${item.id}"/>'>Editer</a></td>
+					<td class="buttons"><a href='<spring:url value="${collection}/edit/${item.id}"/>'><span class="fa fa-pencil"></span></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

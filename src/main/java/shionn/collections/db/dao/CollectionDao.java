@@ -16,10 +16,10 @@ public interface CollectionDao {
 	List<Item> list(@Param("collection") Collection collection);
 
 	@Insert("INSERT INTO item (name, author, numbers, complete, collection, year, qty, "
-			+ "plateform, region, category) "
+			+ "plateform, region, category, editor) "
 			+ "VALUES (#{item.name}, #{item.author}, #{item.numbers}, #{item.complete}, "
 			+ "#{item.collection}, #{item.year}, #{item.qty}, #{item.plateform}, "
-			+ "#{item.region}, #{item.category})")
+			+ "#{item.region}, #{item.category}, #{item.editor})")
 	int insert(@Param("item") Item item);
 
 	@Select("SELECT * FROM item WHERE id = #{id} ")
@@ -35,6 +35,7 @@ public interface CollectionDao {
 			+ "region     = #{item.region},     " //
 			+ "year       = #{item.year},       " //
 			+ "category   = #{item.category},   " //
+			+ "editor     = #{item.editor},     " //
 			+ "qty        = #{item.qty}         " //
 			+ "WHERE id   = #{item.id}")
 	int save(@Param("item") Item item);

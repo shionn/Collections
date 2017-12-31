@@ -95,7 +95,7 @@
 			<id>dedibox</id>
 			<properties>
 				<skip.test>true</skip.test>
-				<tomcat.path>/dev</tomcat.path>
+				<tomcat.path>/Collections</tomcat.path>
 				<mybatis.driver>com.mysql.cj.jdbc.Driver</mybatis.driver>
 				<mybatis.url>jdbc:mysql://${collections.mysql.host}:${collections.mysql.port}/${collections.mysql.db}?serverTimezone=Europe/Paris</mybatis.url>
 				<mybatis.username>${collections.mysql.user}</mybatis.username>
