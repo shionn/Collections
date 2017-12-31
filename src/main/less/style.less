@@ -32,8 +32,19 @@ table {
 	td , th {
 		padding: 2px;
 		@media (max-width: 500px) {
-			&.author, &.editor, &.region {
+			&.author , &.editor , &.region {
 				display: none;
+			}
+		}
+	}
+
+	th {
+		@media (max-width: 500px) {
+			&.plateform , &.complete, &.qty {
+				max-width: 32px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 		}
 	}
@@ -48,7 +59,7 @@ table {
 			text-align: center;
 		}
 
-		td.numbers , td.complete {
+		td.numbers, td.complete, td.plateform, td.year, td.qty {
 			text-align: center;
 		}
 	}
@@ -68,10 +79,16 @@ form {
 	label {
 		display: inline-block;
 		width: 15%;
+		@media (max-width: 500px) {
+			width: 30%;
+		}
 	}
 
 	input[type=text] , input[type=number] {
 		width: 85%;
+		@media (max-width: 500px) {
+			width: 70%;
+		}
 	}
 }
 
