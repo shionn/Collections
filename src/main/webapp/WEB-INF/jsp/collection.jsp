@@ -51,6 +51,7 @@
 					<c:forEach items="${c.model.fields}" var="f">
 						<td>${f.present(i)}</td>
 					</c:forEach>
+					<td><a href='<spring:url value="/${collection.id}/${i.id}/edit"/>'>Editer</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

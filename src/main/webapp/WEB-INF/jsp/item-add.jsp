@@ -11,10 +11,18 @@
 <spring:url value="/${collection.id}/add" var="url"/>
 <form:form method="POST" action="${url}">
 	<c:forEach items="${collection.model.fields}" var="f">
-		<label>${f.title}</label>
-		<input placeholder="${f.title}" name="${f.field}"/>
+		<c:choose>
+			<c:when test="${f.bool}">
+				<input type="checkbox" name="${f.field}"/>
+				<label for="${f.field}">${f.title}</label>
+			</c:when>
+			<c:otherwise>
+				<label>${f.title}</label>
+				<input placeholder="${f.title}" name="${f.field}"/>
+			</c:otherwise>
+		</c:choose>
 	</c:forEach>
-	<input type="submit" value="Ajouter">
+	<br><input type="submit" value="Ajouter">
 </form:form>
 
 </jsp:attribute>
