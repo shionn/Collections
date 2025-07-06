@@ -25,7 +25,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper class="shionn.collections.db.dao.AuthenticationDao"/>
-		<mapper class="shionn.collections.db.dao.CollectionDao"/>
+		<package name="collections.db.dao"/>
 	</mappers>
 </configuration>
