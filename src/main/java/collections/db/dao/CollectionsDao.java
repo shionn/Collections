@@ -35,15 +35,15 @@ public interface CollectionsDao {
 	@Select("SELECT * FROM item WHERE collection = #{parent} ORDER BY name")
 	List<Item> listItems(int parent);
 
-	@Insert("INSERT INTO item (collection, updated, author, complete, name, numbers) "
-			+ "VALUES (#{collection}, NOW(), #{item.author}, #{item.complete}, #{item.name}, #{item.numbers})")
+	@Insert("INSERT INTO item (collection, updated, author, complete, edition, name, numbers) "
+			+ "VALUES (#{collection}, NOW(), #{item.author}, #{item.complete}, #{item.edition}, #{item.name}, #{item.numbers})")
 	@Options(useGeneratedKeys = true, keyProperty = "item.id")
 	int createItem(@Param("collection") int collection, @Param("item") Item item);
 
 	@Select("SELECT * FROM item WHERE id = #{itemId}")
 	Item readItem(int itemId);
 
-	@Update("UPDATE item SET updated = NOW(), author = #{author}, complete = #{complete}, name = #{name}, numbers = #{numbers} WHERE id = #{id}")
+	@Update("UPDATE item SET updated = NOW(), author = #{author}, complete = #{complete}, edition = #{edition}, name = #{name}, numbers = #{numbers} WHERE id = #{id}")
 	void updateItem(Item item);
 
 }

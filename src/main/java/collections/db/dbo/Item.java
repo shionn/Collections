@@ -17,6 +17,8 @@ public class Item {
 	private Collection collection;
 	private Date updated;
 	private String author;
+	private String editor;
+	private String edition;
 	private boolean complete;
 	private String name;
 	private String numbers;

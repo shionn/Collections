@@ -30,7 +30,7 @@
 			</tr>
 		</c:forEach>
 	</tbody>
-</table>
+</table><br/>
 
 <c:forEach items="${collection.groups}" var="c">
 	<table>
@@ -51,11 +51,11 @@
 					<c:forEach items="${c.model.fields}" var="f">
 						<td>${f.present(i)}</td>
 					</c:forEach>
-					<td><a href='<spring:url value="/${collection.id}/${i.id}/edit"/>'>Editer</a></td>
+					<td><a href='<spring:url value="/${c.id}/${i.id}/edit"/>'>Editer</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
-	</table>
+	</table><br/>
 </c:forEach>
 
 </jsp:attribute>

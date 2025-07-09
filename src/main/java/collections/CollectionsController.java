@@ -57,6 +57,12 @@ public class CollectionsController {
 
 	@ModelAttribute
 	public Collection collection(@PathVariable("collection-id") int id) {
-		return session.getMapper(CollectionsDao.class).list(id);
+		return sort(session.getMapper(CollectionsDao.class).list(id));
+	}
+
+	private Collection sort(Collection source) {
+		source.getGroups().forEach(this::sort);
+		source.getItems().sort(source.getModel().getComparator());
+		return source;
 	}
 }

@@ -10,7 +10,8 @@ import lombok.RequiredArgsConstructor;
 public enum ItemField {
 	author("author", "Auteur", o -> o.getAuthor()), //
 	complete("complete", "Complet", o -> o.isComplete() ? "✅" : "❌"), //
-	editor("editor", "Editor", o -> o.getAuthor()), //
+	editor("editor", "Editor", o -> o.getEditor()), //
+	edition("edition", "Edition", o -> o.getEdition()), //
 	name("name", "Nom", o -> o.getName()), //
 	numbers("numbers", "Numéros", o -> {
 		return o.getNumbers();
