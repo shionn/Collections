@@ -2,6 +2,7 @@ package collections.db.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.Options;
@@ -45,5 +46,8 @@ public interface CollectionsDao {
 
 	@Update("UPDATE item SET updated = NOW(), author = #{author}, complete = #{complete}, edition = #{edition}, name = #{name}, numbers = #{numbers} WHERE id = #{id}")
 	void updateItem(Item item);
+
+	@Delete("DELETE FROM item WHERE id = #{id}")
+	void delete(int itemId);
 
 }

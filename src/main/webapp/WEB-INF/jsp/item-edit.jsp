@@ -23,6 +23,9 @@
 		</c:choose>
 	</c:forEach>
 	<br><input type="submit" value="Editer">
+	<spring:url value="/${collection.id}/${item.id}/delete" var="url"/>
+	<br/>
+	<a href="${url}">Supprimer</a>
 </form:form>
 
 </jsp:attribute>

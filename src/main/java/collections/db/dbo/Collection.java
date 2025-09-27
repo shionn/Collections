@@ -15,6 +15,7 @@ public class Collection {
 	private int id;
 	private String name;
 	private Model model;
+	private SortBy sortBy;
 	private List<Collection> groups;
 	private List<Item> items;
 }

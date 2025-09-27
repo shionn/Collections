@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class CollectionsController {
 
 	private final SqlSession session;
-	
+
 	@GetMapping
 	public ModelAndView view() {
 		return new ModelAndView("collection");
@@ -45,6 +45,14 @@ public class CollectionsController {
 		return new ModelAndView("item-edit").addObject("item", dao.readItem(itemId));
 	}
 
+	@GetMapping("{item-id}/delete")
+	public String delete(@PathVariable("collection-id") int collectionId, @PathVariable("item-id") int itemId) {
+		CollectionsDao dao = session.getMapper(CollectionsDao.class);
+		dao.delete(itemId);
+		session.commit();
+		return "redirect:/" + collectionId;
+	}
+
 	@PostMapping("{item-id}/edit")
 	public String edit(@PathVariable("collection-id") int collectionId, @PathVariable("item-id") int itemId,
 			@ModelAttribute Item item) {
@@ -62,7 +70,7 @@ public class CollectionsController {
 
 	private Collection sort(Collection source) {
 		source.getGroups().forEach(this::sort);
-		source.getItems().sort(source.getModel().getComparator());
+		source.getItems().sort(source.getSortBy().getComparator());
 		return source;
 	}
 }
