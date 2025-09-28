@@ -1,0 +1,11 @@
+table a {
+  text-decoration: none;
+}
+table thead tr:first-child th {
+  text-align: center;
+}
+table thead a {
+  color: var(--color-bg);
+}
+
+/*# sourceMappingURL=style.css.map */

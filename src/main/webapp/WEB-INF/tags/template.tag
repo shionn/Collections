@@ -14,7 +14,6 @@
 <meta name="mobile-web-app-capable" content="yes" />
 <title>Collections</title>
 <link rel="stylesheet" href="<spring:url value="/css/mvp.css"/>" />
-<link rel="stylesheet" href="<spring:url value="/css/font-awesome.css"/>" />
 <link rel="stylesheet" href="<spring:url value="/css/style.css"/>" />
 <link rel="icon" href="<spring:url value="/img/favicon.ico"/>" type="image/x-icon">
 <link rel="shortcut icon" href="<spring:url value="/img/favicon.ico"/>" type="image/x-icon"> </head>
@@ -38,7 +37,5 @@
 		<hr>
 		<p>Collections by <a href="mailto:shionn@gmail.com">shionn</a></p>
 	</footer>
-	<script type="text/javascript" src='<spring:url value="/js/scripts.js"/>'></script>
-	<jsp:invoke fragment="scripts" />
 </body>
 </html>

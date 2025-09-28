@@ -17,7 +17,7 @@
 			<c:forEach items="${collection.model.fields}" var="f">
 				<th>${f.title}</th>
 			</c:forEach>
-			<th><a href='<spring:url value="/${collection.id}/add"/>'>Ajouter</a></th>
+			<th><a href='<spring:url value="/${collection.id}/add"/>'>⨁</a></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,7 +26,7 @@
 				<c:forEach items="${collection.model.fields}" var="f">
 					<td>${f.present(i)}</td>
 				</c:forEach>
-				<td><a href='<spring:url value="/${collection.id}/${i.id}/edit"/>'>Editer</a></td>
+				<td><a href='<spring:url value="/${collection.id}/${i.id}/edit"/>'>✎</a></td>
 			</tr>
 		</c:forEach>
 	</tbody>
@@ -42,7 +42,7 @@
 				<c:forEach items="${c.model.fields}" var="f">
 					<th>${f.title}</th>
 				</c:forEach>
-				<th><a href='<spring:url value="/${c.id}/add"/>'>Ajouter</a></th>
+				<th><a href='<spring:url value="/${c.id}/add"/>'>⨁</a></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -51,7 +51,7 @@
 					<c:forEach items="${c.model.fields}" var="f">
 						<td>${f.present(i)}</td>
 					</c:forEach>
-					<td><a href='<spring:url value="/${c.id}/${i.id}/edit"/>'>Editer</a></td>
+					<td><a href='<spring:url value="/${c.id}/${i.id}/edit"/>'>✎</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

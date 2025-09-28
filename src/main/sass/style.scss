@@ -1,0 +1,17 @@
+
+table {
+	a {
+		text-decoration: none;
+	}
+
+	thead {
+		tr:first-child th {
+			text-align: center;
+		}
+		a {
+			color: var(--color-bg);
+		}
+	}
+
+}
+

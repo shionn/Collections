@@ -91,7 +91,9 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 				@Override
 				public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 						ModelAndView modelAndView) {
-					modelAndView.addObject("collections", session.getMapper(CollectionsDao.class).listAll());
+					if (modelAndView != null) {
+						modelAndView.addObject("collections", session.getMapper(CollectionsDao.class).listAll());
+					}
 				}
 			});
 		}
