@@ -29,7 +29,15 @@
 				<td><a href='<spring:url value="/${collection.id}/${i.id}/edit"/>'>✎</a></td>
 			</tr>
 		</c:forEach>
+		<c:if test="${ not empty collection.description}">
+			<tr>
+				<td colspan="${collection.model.fields.size()}">
+					<pre>${collection.description}</pre>
+				</td>
+			</tr>
+		</c:if>
 	</tbody>
+
 </table><br/>
 
 <c:forEach items="${collection.groups}" var="c">
@@ -54,6 +62,13 @@
 					<td><a href='<spring:url value="/${c.id}/${i.id}/edit"/>'>✎</a></td>
 				</tr>
 			</c:forEach>
+			<c:if test="${ not empty c.description}">
+				<tr>
+					<td colspan="${c.model.fields.size()+1}">
+						<pre>${c.description}</pre>
+					</td>
+				</tr>
+			</c:if>
 		</tbody>
 	</table><br/>
 </c:forEach>

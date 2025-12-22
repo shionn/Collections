@@ -18,4 +18,5 @@ public class Collection {
 	private SortBy sortBy;
 	private List<Collection> groups;
 	private List<Item> items;
+	private String description;
 }
