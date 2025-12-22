@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 public enum SortBy {
 
 	edition((a, b) -> a.getEdition().compareTo(b.getEdition())),
+	console((a, b) -> a.getConsole().compareTo(b.getConsole())),
 	name((a, b) -> a.getName().compareTo(b.getName())),
 	number((a, b) -> {
 		try {

@@ -22,6 +22,9 @@ public class Item {
 	private boolean complete;
 	private String name;
 	private String numbers;
+	private String console;
+	private boolean box;
+	private boolean manual;
 
 
 }
