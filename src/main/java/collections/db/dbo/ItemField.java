@@ -11,7 +11,7 @@ public enum ItemField {
 	author("author", "Auteur", o -> o.getAuthor(), false), //
 	box("box", "Boite", o -> o.isBox() ? "✅" : "❌", true), //
 	complete("complete", "Complet", o -> o.isComplete() ? "✅" : "❌", true), //
-	console("console", "Console", o -> o.getConsole(), false), //
+	console("console", "Console", o -> "<img src=\"img/console/" + o.getConsole() + ".png\"/>", false), //
 	editor("editor", "Editor", o -> o.getEditor(), false), //
 	edition("edition", "Edition", o -> o.getEdition(), false), //
 	manual("manual", "Manuel", o -> o.isManual() ? "✅" : "❌", true), //

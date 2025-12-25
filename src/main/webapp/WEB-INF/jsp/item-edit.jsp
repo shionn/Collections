@@ -5,6 +5,8 @@
 <%@ taglib prefix="fn" uri="jakarta.tags.functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="t"%>
+<%@ page import="collections.db.dbo.ItemField" %>
+<%@ page import="collections.db.dbo.Console" %>
 <t:template>
 <jsp:attribute name="content">
 
@@ -15,6 +17,14 @@
 			<c:when test="${f.bool}">
 				<input type="checkbox" name="${f.field}" <c:if test="${item[f.field]}">checked="checked"</c:if>/>
 				<label for="${f.field}">${f.title}</label>
+			</c:when>
+			<c:when test="${f == ItemField.console}">
+				<label for="${f.field}">${f.title}</label>
+				<select  name="${f.field}">
+					<c:forEach items="${Console.values()}" var="c">
+						<option value="${c}" <c:if test="${c == item[f.field]}">selected="selected"</c:if>>${c}</option>
+					</c:forEach>
+				</select>
 			</c:when>
 			<c:otherwise>
 				<label for="${f.field}">${f.title}</label>
