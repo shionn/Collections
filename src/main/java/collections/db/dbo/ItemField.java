@@ -16,7 +16,9 @@ public enum ItemField {
 	edition("edition", "Edition", o -> o.getEdition(), false), //
 	manual("manual", "Manuel", o -> o.isManual() ? "✅" : "❌", true), //
 	name("name", "Nom", o -> o.getName(), false), //
-	numbers("numbers", "Numéros", o -> o.getNumbers(), false)
+	numbers("numbers", "Numéros", o -> o.getNumbers(), false),
+	quote("quote", "Cours", o -> o.getQuote(), false),
+	note("note", "Note", o -> o.getNote(), false)
 
 	;
 	@Getter

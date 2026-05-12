@@ -13,7 +13,9 @@ public enum Model {
 	manga_group_by_autors(Arrays.asList(ItemField.name, ItemField.numbers, ItemField.complete)),
 	ldvelh(Arrays.asList(ItemField.numbers, ItemField.name, ItemField.edition)),
 	jeux_video(Arrays.asList(ItemField.name, ItemField.console)),
-	jv_retro(Arrays.asList(ItemField.name, ItemField.console, ItemField.box, ItemField.manual));
+	jv_retro(Arrays
+			.asList(ItemField.name, ItemField.console, ItemField.box, ItemField.manual, ItemField.quote,
+					ItemField.note));
 
 	private final List<ItemField> fields;
 }

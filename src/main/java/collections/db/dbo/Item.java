@@ -25,6 +25,8 @@ public class Item {
 	private Console console;
 	private boolean box;
 	private boolean manual;
+	private String quote;
+	private String note;
 
 
 }

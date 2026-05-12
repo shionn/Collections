@@ -37,8 +37,8 @@ public interface CollectionsDao {
 	List<Item> listItems(int parent);
 
 	@Insert("""
-			INSERT INTO item (collection, updated, author, box, complete, console, edition, manual, name, numbers)
-			VALUES (#{collection}, NOW(), #{item.author}, #{item.box}, #{item.complete}, #{item.console}, #{item.edition}, #{item.manual}, #{item.name}, #{item.numbers})
+			INSERT INTO item (collection, updated, author, box, complete, console, edition, manual, name, numbers, quote, note)
+			VALUES (#{collection}, NOW(), #{item.author}, #{item.box}, #{item.complete}, #{item.console}, #{item.edition}, #{item.manual}, #{item.name}, #{item.numbers}, #{item.quote}, #{item.note})
 			""")
 	@Options(useGeneratedKeys = true, keyProperty = "item.id")
 	int createItem(@Param("collection") int collection, @Param("item") Item item);
@@ -55,7 +55,9 @@ public interface CollectionsDao {
 				edition = #{edition},
 				manual = #{manual},
 				name = #{name},
-				numbers = #{numbers}
+				numbers = #{numbers},
+				quote = #{quote},
+				note = #{note}
 			WHERE id = #{id}
 			""")
 	void updateItem(Item item);
