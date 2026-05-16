@@ -19,4 +19,8 @@ public class Collection {
 	private List<Collection> groups;
 	private List<Item> items;
 	private String description;
+
+	public boolean isVisible() {
+		return !items.isEmpty() || groups.isEmpty();
+	}
 }

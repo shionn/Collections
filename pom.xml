@@ -41,11 +41,11 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
-				<configuration>
+				<version>2.2</version>
+					<configuration>
 					<url>http://Collections:80/manager/text</url>
 					<server>Proxmox</server>
 					<path>/</path>
-					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 

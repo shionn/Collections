@@ -8,37 +8,38 @@
 <t:template>
 <jsp:attribute name="content">
 
-<table>
-	<thead>
-		<tr>
-			<th colspan="${collection.model.fields.size()+1}">${collection.name}</th>
-		</tr>
-		<tr>
-			<c:forEach items="${collection.model.fields}" var="f">
-				<th>${f.title}</th>
-			</c:forEach>
-			<th><a href='<spring:url value="/${collection.id}/add"/>'>⨁</a></th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach items="${collection.items}" var="i">
+<c:if test="${collection.visible}">
+	<table>
+		<thead>
+			<tr>
+				<th colspan="${collection.model.fields.size()+1}">${collection.name}</th>
+			</tr>
 			<tr>
 				<c:forEach items="${collection.model.fields}" var="f">
-					<td>${f.present(i)}</td>
+					<th>${f.title}</th>
 				</c:forEach>
-				<td><a href='<spring:url value="/${collection.id}/${i.id}/edit"/>'>✎</a></td>
+				<th><a href='<spring:url value="/${collection.id}/add"/>'>⨁</a></th>
 			</tr>
-		</c:forEach>
-		<c:if test="${ not empty collection.description}">
-			<tr>
-				<td colspan="${collection.model.fields.size()}">
-					<pre>${collection.description}</pre>
-				</td>
-			</tr>
-		</c:if>
-	</tbody>
-
-</table><br/>
+		</thead>
+		<tbody>
+			<c:forEach items="${collection.items}" var="i">
+				<tr>
+					<c:forEach items="${collection.model.fields}" var="f">
+						<td>${f.present(i)}</td>
+					</c:forEach>
+					<td><a href='<spring:url value="/${collection.id}/${i.id}/edit"/>'>✎</a></td>
+				</tr>
+			</c:forEach>
+			<c:if test="${ not empty collection.description}">
+				<tr>
+					<td colspan="${collection.model.fields.size()}">
+						<pre>${collection.description}</pre>
+					</td>
+				</tr>
+			</c:if>
+		</tbody>
+	</table><br/>
+</c:if>
 
 <c:forEach items="${collection.groups}" var="c">
 	<table>
