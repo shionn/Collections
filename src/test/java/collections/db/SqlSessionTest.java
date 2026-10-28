@@ -37,7 +37,7 @@ public class SqlSessionTest {
 		when(mockSession.getConfiguration()).thenReturn(new Configuration());
 		when(mockSession.getConnection()).thenReturn(mock(Connection.class));
 		when(mockSession.flushStatements()).thenReturn(new ArrayList<>());
-		when(mockSession.getMapper(String.class)).thenReturn(mock(Object.class));
+// Removed unused mock
 	}
 
 	@Test
