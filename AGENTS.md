@@ -1,0 +1,1 @@
+STOP ! Avant toute action ou génération de code, tu DOIS obligatoirement lire ShionnAgent/AGENTS.md et appliquer rigoureusement toutes ses règles. C'est la priorité absolue. Ne commence aucune tâche sans avoir validé cette étape préalable.
