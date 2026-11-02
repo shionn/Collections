@@ -25,6 +25,7 @@
 		</environment>
 	</environments>
 	<mappers>
-		<package name="collections.db.dao"/>
+		<mapper class="collections.db.dao.IndexDao"/>
+		<mapper class="collections.db.dao.CollectionsDao"/>
 	</mappers>
 </configuration>
